@@ -1,7 +1,7 @@
 workspace(
     name = "multiple_package_json",
     managed_directories = {
-        "@npm": ["node_modules"],
+        "@npm": ["app/node_modules"], # Removing this managed_directory, causes it not to be installed
         "@tools_npm": ["devtools/node_modules"],
     },
 )
@@ -20,15 +20,10 @@ http_archive(
 # It also extracts any Bazel rules distributed in an npm package.
 load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "npm_install")
 
-node_repositories(
-    node_version = "15.0.1",
-    package_json = ["//:package.json"],
-)
-
 npm_install(
     name = "npm",
-    package_json = "//:package.json",
-    package_lock_json = "//:package-lock.json",
+    package_json = "//:app/package.json",
+    package_lock_json = "//:app/package-lock.json",
     strict_visibility = False,
     symlink_node_modules = True,
 )
