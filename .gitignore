@@ -1,0 +1,5 @@
+bazel-bin
+bazel-out
+bazel-testlogs
+bazel-bazel_node_multiple_package_json
+**/node_modules

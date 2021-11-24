@@ -1,0 +1,10 @@
+{
+    "name": "devtools",
+    "version": "1.0.0",
+    "description": "",
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "pyright": "1.1.189"
+    }
+  }
